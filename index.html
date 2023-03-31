@@ -428,9 +428,22 @@
             </li>
           </ul>
         </div>
+        <div class="footer-form-container">
+          <p class="footer-social-media">Subscribe</p>
+          <form class="footer-form">
+            <label class="visually-hidden" for="footer-email">E-mail</label>
+            <input type="email" class="footer-email" name="footer-email" id="footer-email" placeholder="E-mail">
+            <button type="submit" class="footer-button">
+              <span class="footer-button-name">Subscribe</span>
+              <svg class="footer-button-icon">
+                <use href="./images/icons.svg#icon-footer-button-icon"></use>
+              </svg>
+            </button>          
+          </form>
+        </div>
       </div>
     </footer>
-    <div class="backdrop" data-modal>
+    <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button type="button" class="modal-close" data-modal-close>
           <svg class="modal-close-icon">
@@ -494,6 +507,7 @@
               type="checkbox"
               id="private-policy"
               name="private-policy"
+              value="true"
             />
             <label class="policy-label" for="private-policy">
               <span class="new-check">

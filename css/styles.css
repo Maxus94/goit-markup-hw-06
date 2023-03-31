@@ -11,7 +11,7 @@
     --hover-color: #404BBF;
     /*OCEAN*/
     --main-font: 'Roboto', sans-serif;
-    --transition-parameters: 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-parameters: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 p,
@@ -174,7 +174,6 @@ body {
 
 .footer-container {
     display: flex;
-    gap: 120px;
 }
 
 .footer .logo-em {
@@ -189,6 +188,11 @@ body {
     color: var(--button-second-color);
     max-width: 264px;
     margin-top: 16px;
+}
+
+.footer-social {
+    margin-left: 120px;
+    margin-right: 80px;
 }
 
 .footer-social-media {
@@ -230,6 +234,8 @@ body {
 .footer-social-link:focus {
     background: #31D0AA;
 }
+
+
 
 /*main styles*/
 
@@ -715,10 +721,15 @@ body {
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
     outline: transparent;
+    transition: border-color var(--transition-parameters);
 }
 
 .modal-textarea::placeholder {
     color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-textarea:focus {
+    border-color: var(--button-main-color);
 }
 
 .input-wrap {
@@ -727,7 +738,7 @@ body {
 
 .input-icon {
     width: 18px;
-    height: 18px;
+    height: 24px;
     top: 50%;
     transform: translateY(-50%);
     left: 16px;
@@ -738,7 +749,7 @@ body {
 
 .policy-label {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     font-size: 12px;
     line-height: 1.33;
     letter-spacing: 0.04em;
@@ -755,29 +766,93 @@ body {
     border: 1.25px solid #2E2F42;
     border-radius: 2px;
     cursor: pointer;
-
+    fill: transparent;
+    transition: fill var(--transition-parameters), background-color var(--transition-parameters), border-color var(--transition-parameters);
 }
 
-.check-icon{
+.check-icon {
     width: 10px;
     height: 8px;
-    fill: transparent;
+
 }
 
 .policy-link {
-    color: var(--button-main-color);    
+    color: var(--button-main-color);
 }
 
-.modal-check:checked + .policy-label>.new-check{
+.modal-check:checked+.policy-label .new-check {
     background-color: #4D5AE5;
-    
-}
-
-.modal-check:checked + .policy-label .check-icon{
     fill: #F4F4FD;
 }
 
-.modal-check-field{
+.modal-check:focus+.policy-label .new-check {
+    border-color: #4D5AE5;
+}
+
+.modal-check-field {
     margin-top: 16px;
-    margin-bottom: 24px;   
+    margin-bottom: 24px;
+}
+
+.footer-button-icon {
+    width: 24px;
+    height: 24px;
+    fill: #FFFFFF;
+}
+
+.footer-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    font-family: var(--main-font);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #FFFFFF;
+    background-color: var(--button-main-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    min-width: 165px;
+    height: 40px;
+    border: none;
+    transition: background-color var(--transition-parameters);
+}
+
+.footer-button:hover,
+.footer-button:focus {
+    background-color: var(--hover-color);
+    cursor: pointer;
+}
+
+.footer-form {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.footer-email {
+    width: 264px;
+    height: 40px;
+    padding-left: 16px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+    outline: transparent;
+    transition: border-color var(--transition-parameters);
+}
+
+.footer-email::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-email:focus{
+    border-color: #FFFFFF;
 }
